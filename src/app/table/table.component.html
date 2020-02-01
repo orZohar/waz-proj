@@ -1,0 +1,23 @@
+<!-- table titles -->
+<div class="datatable-wrapper">
+    <div class="table-headers">
+        <div *ngFor="let header of headers" class="table-cell">
+            <h3 (click)="sort(header)">
+                <span (click)="selected=!selected;">{{header.displayName}}<i [ngClass]="{'arrow-down': selected, 'arrow-up': !selected}"></i></span>
+            </h3>
+        </div>
+    </div>
+    <!-- table filters -->
+    <div  class="table-filters">
+        <div *ngFor="let item of inputsArray; let i = index" class="table-cell">
+            <input class="Rtable-input" [(ngModel)]="inputsArray[i].value" type="text" (ngModelChange)="filter(inputsArray)" />
+        </div>
+    </div>
+
+    <!-- table body  -->
+    <div class="Rtable-body">
+        <div *ngFor="let entity of displayData; let i=index">
+            <table-row [entity]="entity" [headers]="headers" [rowNumber]="i"></table-row>
+        </div>
+    </div>
+</div>

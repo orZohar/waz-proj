@@ -1,0 +1,31 @@
+.Rtable-row{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    overflow: hidden;
+    width:100%;
+    flex-grow: 1;
+    border: 1px solid transparent;
+}
+
+.Rtable-row:hover{ 
+    color: #316cb3;
+}
+
+.Rtable-cell{
+    margin: 0;
+    flex-grow: 1; // makes cells even in the row flex 
+    width: 14%;
+    text-align: center; 
+    padding: 1.4vh 0;
+    font-weight: 600; 
+    font-size: 1em;
+}
+
+.row-color1 { 
+    background-color: #e0e0e0;
+}
+
+.row-color2 { 
+    background-color: #fafafa;
+}
